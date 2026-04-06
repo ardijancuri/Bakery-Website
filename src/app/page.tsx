@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ProductCard } from "@/components/product-card";
+import pekonIcon from "../../pekon-icon.png";
 import {
   featuredProducts,
   homeHero,
@@ -31,7 +32,14 @@ export default function Home() {
 
         <div className="page-frame relative flex min-h-[44rem] items-center justify-center py-32 text-center sm:min-h-[52rem] sm:py-36 lg:min-h-[60rem] lg:py-44">
           <div className="rise-in max-w-xl space-y-4">
-            <p className="eyebrow text-[var(--brand-gold)]">{homeHero.kicker}</p>
+            <Image
+              src={pekonIcon}
+              alt="Pekon icon"
+              width={96}
+              height={96}
+              priority
+              className="mx-auto h-20 w-20 object-contain sm:h-24 sm:w-24"
+            />
             <h1 className="text-5xl font-black uppercase leading-[0.92] text-white [text-shadow:0_6px_18px_rgba(41,21,23,0.45)] sm:text-6xl lg:text-7xl">
               {homeHero.title}
             </h1>
@@ -53,8 +61,7 @@ export default function Home() {
 
       <section className="section-red">
         <div className="page-frame py-16 sm:py-20">
-          <div className="space-y-3 text-center">
-            <p className="eyebrow text-[var(--brand-gold)]">At home</p>
+          <div className="text-center">
             <h2 className="text-3xl font-black uppercase sm:text-4xl">
               The daily line
             </h2>
@@ -119,8 +126,7 @@ export default function Home() {
 
       <section className="logo-pattern-surface">
         <div className="page-frame py-16 sm:py-20">
-          <div className="space-y-3 text-center">
-            <p className="eyebrow">Gift picks</p>
+          <div className="text-center">
             <h2 className="text-3xl font-black uppercase text-[var(--brand-red)] sm:text-4xl">
               Gift ideas
             </h2>
@@ -144,7 +150,6 @@ export default function Home() {
             </div>
 
             <div className="space-y-4">
-              <p className="eyebrow">Pekon stop</p>
               <h2 className="max-w-lg text-4xl font-black uppercase leading-[0.95] text-[var(--brand-red)] sm:text-5xl">
                 Coffee. Sweet. Quick seat.
               </h2>
@@ -163,8 +168,7 @@ export default function Home() {
 
       <section className="section-red">
         <div className="page-frame py-16 sm:py-20">
-          <div className="space-y-3 text-center">
-            <p className="eyebrow text-[var(--brand-gold)]">Your favorites</p>
+          <div className="text-center">
             <h2 className="text-3xl font-black uppercase sm:text-4xl">
               Favorites
             </h2>
@@ -235,8 +239,7 @@ export default function Home() {
             </div>
 
             <div className="space-y-5">
-              <div className="space-y-3">
-                <p className="eyebrow">In focus</p>
+              <div>
                 <h2 className="text-4xl font-black uppercase leading-[0.95] text-[var(--brand-red)] sm:text-5xl">
                   In focus
                 </h2>
@@ -259,8 +262,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-16 space-y-3 text-center">
-            <p className="eyebrow">Merch</p>
+          <div className="mt-16 text-center">
             <h2 className="text-3xl font-black uppercase text-[var(--brand-red)] sm:text-4xl">
               Merchandising
             </h2>

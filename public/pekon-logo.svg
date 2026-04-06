@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" role="img" aria-labelledby="title desc">
+  <title id="title">Pekon 1995 logo</title>
+  <desc id="desc">Gold circle with black wheat symbol above a red Pekon wordmark and 1995 text.</desc>
+  <circle cx="280" cy="104" r="92" fill="#F4AF45"/>
+  <g fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M280 30v132" stroke-width="12"/>
+    <path d="M280 54c20 18 30 38 30 59 0 18-10 33-30 46" stroke-width="9"/>
+    <path d="M280 54c-20 18-30 38-30 59 0 18 10 33 30 46" stroke-width="9"/>
+    <path d="M252 74c-16 12-24 28-24 45 0 16 8 30 24 40" stroke-width="8"/>
+    <path d="M308 74c16 12 24 28 24 45 0 16-8 30-24 40" stroke-width="8"/>
+    <path d="M230 102c-14 10-20 24-20 38 0 14 6 26 20 35" stroke-width="7"/>
+    <path d="M330 102c14 10 20 24 20 38 0 14-6 26-20 35" stroke-width="7"/>
+    <path d="M280 136c0 20-8 35-24 49" stroke-width="8"/>
+    <path d="M280 136c0 20 8 35 24 49" stroke-width="8"/>
+  </g>
+  <text
+    x="280"
+    y="336"
+    text-anchor="middle"
+    font-family="Cooper Black, Arial Black, Georgia, serif"
+    font-size="144"
+    font-weight="900"
+    fill="#C12026"
+    stroke="#111111"
+    stroke-width="5"
+    paint-order="stroke fill"
+    letter-spacing="-2"
+  >
+    Pekon
+  </text>
+  <text
+    x="280"
+    y="404"
+    text-anchor="middle"
+    font-family="Georgia, Times New Roman, serif"
+    font-size="58"
+    font-weight="700"
+    fill="#C12026"
+    stroke="#111111"
+    stroke-width="2.4"
+    paint-order="stroke fill"
+    letter-spacing="1"
+  >
+    1995
+  </text>
+</svg>
