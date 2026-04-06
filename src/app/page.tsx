@@ -182,38 +182,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="grid gap-0 sm:grid-cols-3">
-          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
-            <Image
-              src="/pekon3.jpg"
-              alt="Pekon sandwich special"
-              fill
-              sizes="(max-width: 640px) 100vw, 33vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
-            <Image
-              src="/pekon4.jpg"
-              alt="Pekon Dubai croissant"
-              fill
-              sizes="(max-width: 640px) 100vw, 33vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
-            <Image
-              src="/pekon5.jpg"
-              alt="Pekon ultra chocolate pastry"
-              fill
-              sizes="(max-width: 640px) 100vw, 33vw"
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
       <section className="logo-pattern-surface">
         <div className="page-frame py-16 sm:py-20">
           <div className="grid gap-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-start">
@@ -278,6 +246,38 @@ export default function Home() {
             <Link href="/products" className="button-chip">
               Full catalog
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="grid gap-0 sm:grid-cols-3">
+          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
+            <Image
+              src="/pekon3.jpg"
+              alt="Pekon sandwich special"
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
+            <Image
+              src="/pekon4.jpg"
+              alt="Pekon Dubai croissant"
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
+            <Image
+              src="/pekon5.jpg"
+              alt="Pekon ultra chocolate pastry"
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
