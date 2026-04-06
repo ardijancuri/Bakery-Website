@@ -1,65 +1,284 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import { ProductCard } from "@/components/product-card";
+import {
+  featuredProducts,
+  homeHero,
+  homePromoStrips,
+  homeShortcuts,
+  products,
+} from "@/lib/storefront-data";
+
+const giftPicks = featuredProducts.slice(0, 4);
+const favoritePicks = products.slice(4, 8);
+const merchPicks = products.slice(12, 16);
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <>
+      <section className="relative min-h-[44rem] overflow-hidden bg-[var(--brand-red)] text-white sm:min-h-[52rem] lg:min-h-[60rem]">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src={homeHero.image}
+          alt={homeHero.title}
+          fill
           priority
+          sizes="100vw"
+          className="object-cover"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+
+        <div className="absolute inset-0 bg-[rgba(41,21,23,0.34)]" />
+
+        <div className="page-frame relative flex min-h-[44rem] items-center justify-center py-32 text-center sm:min-h-[52rem] sm:py-36 lg:min-h-[60rem] lg:py-44">
+          <div className="rise-in max-w-xl space-y-4">
+            <p className="eyebrow text-[var(--brand-gold)]">{homeHero.kicker}</p>
+            <h1 className="text-5xl font-black uppercase leading-[0.92] text-white [text-shadow:0_6px_18px_rgba(41,21,23,0.45)] sm:text-6xl lg:text-7xl">
+              {homeHero.title}
+            </h1>
+            <p className="mx-auto max-w-sm text-sm leading-7 text-white [text-shadow:0_4px_12px_rgba(41,21,23,0.42)]">
+              {homeHero.blurb}
+            </p>
+            <div className="pt-2">
+              <Link
+                href={homeHero.primaryCtaHref}
+                className="button-chip bg-[var(--brand-red)] text-white"
+                style={{ borderRadius: "999px" }}
+              >
+                {homeHero.primaryCtaLabel}
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      </section>
+
+      <section className="section-red">
+        <div className="page-frame py-16 sm:py-20">
+          <div className="space-y-3 text-center">
+            <p className="eyebrow text-[var(--brand-gold)]">At home</p>
+            <h2 className="text-3xl font-black uppercase sm:text-4xl">
+              The daily line
+            </h2>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 gap-8 text-center sm:grid-cols-4">
+            {homeShortcuts.map((item, index) => (
+              <Link key={item.title} href={item.href} className="group space-y-4">
+                <div className="relative mx-auto h-28 w-28 sm:h-32 sm:w-32 lg:h-36 lg:w-36">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    priority={index < 2}
+                    sizes="(max-width: 640px) 112px, (max-width: 1024px) 128px, 144px"
+                    className="object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-sm font-black uppercase tracking-[0.06em] text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-white/72">{item.note}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="grid gap-0 sm:grid-cols-3">
+          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/pekon.jpg"
+              alt="Pekon dessert plate"
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
+            <Image
+              src="/pekon1.jpg"
+              alt="Pekon sandwiches"
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
+            <Image
+              src="/pekon2.jpg"
+              alt="Pekon croissant"
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover"
+            />
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="logo-pattern-surface">
+        <div className="page-frame py-16 sm:py-20">
+          <div className="space-y-3 text-center">
+            <p className="eyebrow">Gift picks</p>
+            <h2 className="text-3xl font-black uppercase text-[var(--brand-red)] sm:text-4xl">
+              Gift ideas
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {giftPicks.map((product, index) => (
+              <ProductCard key={product.slug} product={product} priority={index < 2} />
+            ))}
+          </div>
+
+          <div className="mt-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div className="relative min-h-[18rem] overflow-hidden rounded-[1rem] sm:min-h-[24rem]">
+              <Image
+                src="/pekon2.jpg"
+                alt="Pekon cafe experience"
+                fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="space-y-4">
+              <p className="eyebrow">Pekon stop</p>
+              <h2 className="max-w-lg text-4xl font-black uppercase leading-[0.95] text-[var(--brand-red)] sm:text-5xl">
+                Coffee. Sweet. Quick seat.
+              </h2>
+              <p className="max-w-md text-sm leading-7 text-[var(--ink-soft)]">
+                Short menus, bright counters, and bakery shelves built for quick visits.
+              </p>
+              <div className="pt-2">
+                <Link href="/contact" className="button-chip">
+                  Visit Pekon
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-red">
+        <div className="page-frame py-16 sm:py-20">
+          <div className="space-y-3 text-center">
+            <p className="eyebrow text-[var(--brand-gold)]">Your favorites</p>
+            <h2 className="text-3xl font-black uppercase sm:text-4xl">
+              Favorites
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {favoritePicks.map((product, index) => (
+              <ProductCard key={product.slug} product={product} priority={index === 0} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="grid gap-0 sm:grid-cols-3">
+          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
+            <Image
+              src="/pekon3.jpg"
+              alt="Pekon sandwich special"
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
+            <Image
+              src="/pekon4.jpg"
+              alt="Pekon Dubai croissant"
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
+            <Image
+              src="/pekon5.jpg"
+              alt="Pekon ultra chocolate pastry"
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="logo-pattern-surface">
+        <div className="page-frame py-16 sm:py-20">
+          <div className="grid gap-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-start">
+            <div className="grid gap-2 sm:grid-cols-2">
+              <div className="relative min-h-[13rem] overflow-hidden rounded-[1rem]">
+                <Image
+                  src="/pekon.jpg"
+                  alt="Pekon dessert"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 26vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative min-h-[13rem] overflow-hidden rounded-[1rem]">
+                <Image
+                  src="/pekon1.jpg"
+                  alt="Pekon line"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 26vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              <div className="space-y-3">
+                <p className="eyebrow">In focus</p>
+                <h2 className="text-4xl font-black uppercase leading-[0.95] text-[var(--brand-red)] sm:text-5xl">
+                  In focus
+                </h2>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-3">
+                {homePromoStrips.map((item) => (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    className="rounded-[1rem] bg-[var(--surface)] p-4"
+                  >
+                    <p className="eyebrow">{item.title}</p>
+                    <p className="mt-3 text-base font-black uppercase leading-tight text-[var(--brand-red)]">
+                      {item.note}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 space-y-3 text-center">
+            <p className="eyebrow">Merch</p>
+            <h2 className="text-3xl font-black uppercase text-[var(--brand-red)] sm:text-4xl">
+              Merchandising
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {merchPicks.map((product) => (
+              <ProductCard key={product.slug} product={product} />
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link href="/products" className="button-chip">
+              Full catalog
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

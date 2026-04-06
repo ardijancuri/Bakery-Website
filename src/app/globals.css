@@ -1,26 +1,249 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-red: #d12328;
+  --brand-gold: #fca93d;
+  --paper: #fff8f1;
+  --surface: #fff1e2;
+  --surface-strong: #ffffff;
+  --ink: #291517;
+  --ink-soft: #725457;
+  --line: rgba(209, 35, 40, 0.16);
+  --shadow: 0 18px 48px rgba(41, 21, 23, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-jost);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--surface-strong);
+  color: var(--ink);
+  font-family: var(--font-jost), "Avenir Next", "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: rgba(252, 169, 61, 0.42);
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(114, 84, 87, 0.82);
+}
+
+select option {
+  color: var(--ink);
+}
+
+.page-frame {
+  width: min(100%, 1240px);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.page-offset {
+  padding-top: 5.9rem;
+}
+
+@media (min-width: 640px) {
+  .page-frame {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-frame {
+    padding-inline: 2rem;
+  }
+
+  .page-offset {
+    padding-top: 6.9rem;
+  }
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+}
+
+.button-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  border-radius: 0.95rem;
+  border: 1px solid transparent;
+  padding: 0.78rem 1.15rem;
+  background: var(--brand-red);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.button-chip:hover {
+  transform: translateY(-1px);
+}
+
+.button-chip-light {
+  background: #fff;
+  color: var(--brand-red);
+}
+
+.button-chip-outline {
+  border-color: currentColor;
+  background: transparent;
+}
+
+.nav-shell {
+  background: #fff;
+  border-bottom: 4px solid var(--brand-gold);
+  box-shadow: 0 14px 40px rgba(41, 21, 23, 0.1);
+}
+
+.section-red {
+  background: var(--brand-red);
+  color: #fff;
+}
+
+.section-cream {
+  background: var(--paper);
+}
+
+.image-frame {
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--surface);
+}
+
+.logo-pattern-surface {
+  position: relative;
+  isolation: isolate;
+  background-color: #fff;
+}
+
+.logo-pattern-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("/pekon-logo.png");
+  background-position: center top;
+  background-repeat: repeat;
+  background-size: 108px auto;
+  opacity: 0.055;
+  filter: grayscale(1) brightness(1.35) contrast(0.75);
+  pointer-events: none;
+}
+
+.logo-pattern-surface > * {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-pattern-strip {
+  position: relative;
+  overflow: hidden;
+  background: var(--brand-red);
+}
+
+.footer-pattern-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/footer-logo-pattern.svg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 150px auto;
+  opacity: 1;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .footer-pattern-strip::before {
+    background-size: 170px auto;
+  }
+}
+
+@media (min-width: 640px) {
+  .logo-pattern-surface::before {
+    background-size: 96px auto;
+  }
+}
+
+.soft-rule {
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.soft-rule-dark {
+  height: 1px;
+  width: 100%;
+  background: rgba(209, 35, 40, 0.14);
+}
+
+.rise-in {
+  animation: rise-in 0.8s cubic-bezier(0.2, 1, 0.22, 1) both;
+}
+
+.clamp-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
