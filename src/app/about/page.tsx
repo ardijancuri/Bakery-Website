@@ -4,29 +4,31 @@ import Image from "next/image";
 import { locations } from "@/lib/storefront-data";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "Short Pekon brand story with image-led bakery sections.",
+  title: "Rreth Nesh",
+  description: "Historia e Pekon Bakery nga viti 1995 dhe zgjerimi i saj në Shkup.",
 };
 
 export default function AboutPage() {
   return (
-    <div className="page-offset bg-white">
+    <div className="page-offset-red">
       <section className="section-red">
-        <div className="page-frame grid gap-8 py-12 sm:py-16 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+        <div className="page-frame page-hero-block grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
           <div className="space-y-5">
-            <p className="eyebrow text-[var(--brand-gold)]">About</p>
-            <h1 className="text-5xl font-black uppercase leading-[0.94] sm:text-6xl">
-              Built for the daily line.
+            <p className="eyebrow text-[var(--brand-gold)]">Rreth Nesh</p>
+            <h1 className="display-title text-5xl font-black uppercase sm:text-6xl">
+              Nga viti 1995 te pikat e Pekon në Shkup.
             </h1>
             <p className="max-w-md text-sm leading-7 text-white/82">
-              Bread first, sweets next, coffee close by. Short copy and fast shelves.
+              Pekon u hap në vitin 1995, ndërsa koncepti modern Pekon Bakery u zgjerua
+              nga Tetova drejt Shkupit për të sjellë bukë, snack dhe ëmbëlsira të
+              freskëta çdo ditë.
             </p>
           </div>
 
           <div className="relative min-h-[20rem] overflow-hidden rounded-[1rem] lg:min-h-[30rem]">
             <Image
               src="/pekon1.jpg"
-              alt="Pekon sandwich line"
+              alt="Vitrina e sanduiçeve Pekon"
               fill
               sizes="(max-width: 1024px) 100vw, 54vw"
               className="object-cover"
@@ -38,22 +40,25 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="page-frame grid gap-6 py-10 sm:py-14 lg:grid-cols-2">
           <article className="rounded-[1rem] bg-[var(--surface)] p-6">
-            <p className="eyebrow">Morning</p>
+            <p className="eyebrow">Traditë</p>
             <h2 className="mt-3 text-3xl font-black uppercase text-[var(--brand-red)]">
-              Fast shelf
+              Që nga 1995
             </h2>
             <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-              Quick display, clean counters, and product-first browsing across the whole site.
+              Brendi u ndërtua mbi bukë të freskët, shërbim të shpejtë dhe cilësi të
+              qëndrueshme për konsum të përditshëm familjar.
             </p>
           </article>
 
           <article className="rounded-[1rem] bg-[var(--surface)] p-6">
-            <p className="eyebrow">Craft</p>
+            <p className="eyebrow">Zgjerim</p>
             <h2 className="mt-3 text-3xl font-black uppercase text-[var(--brand-red)]">
-              Short story
+              Nga Tetova në Shkup
             </h2>
             <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-              Fewer boxes, tighter sections, and one strong color system from header to footer.
+              Pekon Bakery u rrit nga baza e saj në Tetovë drejt pikave urbane në
+              Shkup, përfshirë East Gate Mall dhe lokacione të tjera me frekuencë të
+              lartë.
             </p>
           </article>
         </div>
@@ -62,19 +67,23 @@ export default function AboutPage() {
       <section className="section-red">
         <div className="page-frame py-10 sm:py-14">
           <div className="space-y-3">
-            <p className="eyebrow text-[var(--brand-gold)]">Locations</p>
-            <h2 className="text-4xl font-black uppercase leading-none sm:text-5xl">
-              Visit Pekon
+            <p className="eyebrow text-[var(--brand-gold)]">Pikat Tona</p>
+            <h2 className="section-title text-4xl font-black uppercase sm:text-5xl">
+              Na gjeni në Shkup
             </h2>
           </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {locations.map((location) => (
-              <article key={location.city} className="rounded-[1rem] bg-white p-5 text-[var(--ink)]">
+              <article key={location.name} className="rounded-[1rem] bg-white p-5 text-[var(--ink)]">
                 <h3 className="text-2xl font-black uppercase text-[var(--brand-red)]">
-                  {location.city}
+                  {location.name}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">{location.address}</p>
+                <p className="mt-3 text-sm leading-6 text-[var(--ink-soft)]">
+                  {location.city}
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">{location.address}</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--ink-soft)]">{location.note}</p>
                 <p className="mt-2 text-sm font-semibold text-[var(--ink)]">{location.hours}</p>
               </article>
             ))}

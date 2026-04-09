@@ -2,25 +2,32 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ProductCard } from "@/components/product-card";
-import { categories, products } from "@/lib/storefront-data";
+import { categories, products, type CategoryKey } from "@/lib/storefront-data";
 
 export const metadata: Metadata = {
-  title: "Products",
-  description: "Browse breads, bakes, and sweets on the Pekon shelf.",
+  title: "Produktet",
+  description: "Shfleto bukët, brumërat dhe ëmbëlsirat e Pekon Bakery.",
+};
+
+const categoryDescriptions: Record<CategoryKey, string> = {
+  bread: "Bukë të freskëta për shtëpi, sanduiçe dhe tavolina familjare.",
+  bake: "Brumëra të kripura dhe specialitete për ritmin e shpejtë të qytetit.",
+  sweet: "Ëmbëlsira të zgjedhura për kafe, desert dhe pauza të vogla gjatë ditës.",
 };
 
 export default function ProductsPage() {
   return (
-    <div className="page-offset bg-white">
+    <div className="page-offset-red">
       <section className="section-red">
-        <div className="page-frame py-12 sm:py-16">
-          <div className="max-w-3xl space-y-5">
-            <p className="eyebrow text-[var(--brand-gold)]">Products</p>
-            <h1 className="text-5xl font-black uppercase leading-[0.94] sm:text-6xl">
-              Daily shelf
+        <div className="page-frame page-hero-block">
+          <div className="hero-copy-wide space-y-5">
+            <p className="eyebrow text-[var(--brand-gold)]">Produktet</p>
+            <h1 className="display-title text-5xl font-black uppercase sm:text-6xl">
+              Vitrina e përditshme
             </h1>
             <p className="max-w-md text-sm leading-7 text-white/82">
-              Bread, bakes, and sweets in clean square shelves. No extra chrome.
+              Bukë, brumëra dhe ëmbëlsira të Pekon për mëngjes, drekë të shpejtë dhe
+              pauzë me kafe.
             </p>
           </div>
 
@@ -55,7 +62,7 @@ export default function ProductsPage() {
                 <div className="space-y-3">
                   <p className="eyebrow text-[var(--brand-gold)]">{category.note}</p>
                   <h2
-                    className={`text-4xl font-black uppercase leading-none sm:text-5xl ${
+                    className={`section-title text-4xl font-black uppercase sm:text-5xl ${
                       isRed ? "text-white" : "text-[var(--brand-red)]"
                     }`}
                   >
@@ -67,7 +74,7 @@ export default function ProductsPage() {
                     isRed ? "text-white/78" : "text-[var(--ink-soft)]"
                   }`}
                 >
-                  Tight product shelves with direct links into the single-product page.
+                  {categoryDescriptions[category.key]}
                 </p>
               </div>
 

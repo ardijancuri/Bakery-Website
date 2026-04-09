@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { locations, navLinks, socialHandle } from "@/lib/storefront-data";
+import { locations, navLinks, siteName, socialHandle } from "@/lib/storefront-data";
 import pekonLogo from "../../pekon-logo.png";
 
 const mainLocations = locations.slice(0, 2);
@@ -28,11 +28,12 @@ export function SiteFooter() {
       <div className="page-frame relative z-10 pb-12 pt-28 text-center sm:pb-14 sm:pt-32">
         <div className="grid gap-8 lg:grid-cols-2">
           {mainLocations.map((location) => (
-            <div key={location.city} className="space-y-2">
+            <div key={location.name} className="space-y-2">
               <p className="text-[0.82rem] font-extrabold uppercase tracking-[0.1em] text-white">
-                {location.city}
+                {location.name}
               </p>
               <div className="space-y-1 text-sm leading-7 text-white/84">
+                <p>{location.city}</p>
                 <p>{location.address}</p>
                 <p>{location.hours}</p>
               </div>
@@ -52,14 +53,13 @@ export function SiteFooter() {
           <span>{socialHandle}</span>
           <span>Instagram</span>
           <span>Facebook</span>
-          <span>YouTube</span>
         </div>
 
         <div className="mt-10 pt-5 text-xs uppercase tracking-[0.22em] text-white/72">
           <div className="soft-rule" />
           <div className="flex flex-col gap-2 pt-5 sm:flex-row sm:items-center sm:justify-between">
-            <p>Pekon Bakery</p>
-            <p>{new Date().getFullYear()} all rights reserved</p>
+            <p>{siteName}</p>
+            <p>{new Date().getFullYear()} të gjitha të drejtat e rezervuara</p>
           </div>
         </div>
       </div>

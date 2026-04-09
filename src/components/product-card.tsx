@@ -26,7 +26,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
 
       <div className="flex flex-1 flex-col items-center pt-4">
         <Link href={`/products/${product.slug}`} className="inline-block">
-          <h3 className="min-h-[4.6rem] text-[1.35rem] font-black leading-tight text-[var(--ink)] group-hover:text-[var(--brand-red)]">
+          <h3 className="card-title min-h-[4.6rem] text-[1.35rem] font-black text-[var(--ink)] group-hover:text-[var(--brand-red)]">
             {product.name}
           </h3>
         </Link>
@@ -41,7 +41,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             href={`/products/${product.slug}`}
             className="inline-flex min-h-[3rem] items-center justify-center rounded-full bg-[var(--brand-red)] px-7 text-[0.82rem] font-extrabold uppercase tracking-[0.18em] text-white"
           >
-            View product
+            Shih produktin
           </Link>
         </div>
       </div>

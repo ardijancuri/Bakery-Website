@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { navLinks } from "@/lib/storefront-data";
+import pekonIcon from "../../pekon-icon.png";
 import pekonLogo from "../../pekon-logo.png";
 
 const leftNavLinks = navLinks.slice(0, 2);
@@ -17,6 +18,41 @@ function isActive(pathname: string, href: string) {
   }
 
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function MenuIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-7 w-7"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.25"
+      strokeLinecap="round"
+    >
+      <path d="M4 7h16" />
+      <path d="M4 12h16" />
+      <path d="M4 17h16" />
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-7 w-7"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.25"
+      strokeLinecap="round"
+    >
+      <path d="M6 6l12 12" />
+      <path d="M18 6L6 18" />
+    </svg>
+  );
 }
 
 export function SiteHeader() {
@@ -69,14 +105,21 @@ export function SiteHeader() {
           </div>
 
           <div className="nav-shell relative flex h-[4.8rem] items-center justify-between px-4 lg:hidden">
+            <Link
+              href="/products"
+              className="text-[0.72rem] font-extrabold uppercase tracking-[0.18em] text-[var(--brand-red)] hover:text-[var(--brand-gold)]"
+            >
+              Produktet
+            </Link>
+
             <button
               type="button"
               onClick={() => setIsMenuOpen(true)}
-              className="text-[0.72rem] font-extrabold uppercase tracking-[0.18em] text-[var(--brand-red)] hover:text-[var(--brand-gold)]"
+              className="inline-flex h-11 w-11 items-center justify-center text-[var(--brand-red)] hover:text-[var(--brand-gold)]"
               aria-expanded={isMenuOpen}
-              aria-label="Open menu"
+              aria-label="Hape menynë"
             >
-              Menu
+              <MenuIcon />
             </button>
 
             <Link
@@ -92,13 +135,6 @@ export function SiteHeader() {
                 className="h-[3rem] w-auto object-contain"
               />
             </Link>
-
-            <Link
-              href="/products"
-              className="text-[0.72rem] font-extrabold uppercase tracking-[0.18em] text-[var(--brand-red)] hover:text-[var(--brand-gold)]"
-            >
-              Shop
-            </Link>
           </div>
         </div>
       </header>
@@ -112,19 +148,20 @@ export function SiteHeader() {
           <div className="flex items-center justify-between">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
               <Image
-                src={pekonLogo}
-                alt="Pekon 1995"
-                width={170}
-                height={158}
-                className="h-[3.2rem] w-auto object-contain"
+                src={pekonIcon}
+                alt="Ikona Pekon"
+                width={72}
+                height={72}
+                className="h-[3.2rem] w-[3.2rem] object-contain"
               />
             </Link>
             <button
               type="button"
               onClick={() => setIsMenuOpen(false)}
-              className="text-[0.72rem] font-extrabold uppercase tracking-[0.18em] text-[var(--brand-gold)]"
+              className="inline-flex h-11 w-11 items-center justify-center text-white"
+              aria-label="Mbylle menynë"
             >
-              Close
+              <CloseIcon />
             </button>
           </div>
 
@@ -150,7 +187,7 @@ export function SiteHeader() {
           <div className="space-y-4">
             <div className="soft-rule" />
             <div className="space-y-1 text-sm text-white/78">
-              <p>Open daily</p>
+              <p>Hapur çdo ditë</p>
               <p>07:00 - 22:00</p>
             </div>
             <Link
@@ -158,7 +195,7 @@ export function SiteHeader() {
               onClick={() => setIsMenuOpen(false)}
               className="button-chip button-chip-light"
             >
-              Find bakery
+              Gjej pikën
             </Link>
           </div>
         </div>

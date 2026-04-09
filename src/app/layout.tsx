@@ -3,6 +3,7 @@ import { Jost } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { siteName } from "@/lib/storefront-data";
 
 const jost = Jost({
   variable: "--font-jost",
@@ -12,10 +13,11 @@ const jost = Jost({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pekon Bakery",
-    template: "%s | Pekon Bakery",
+    default: siteName,
+    template: `%s | ${siteName}`,
   },
-  description: "Bakery storefront with bold campaign-style shelves, product pages, and Pekon branding.",
+  description:
+    "Pekon Bakery në Maqedoninë e Veriut me bukë, brumëra, ëmbëlsira dhe pika shitjeje në Shkup.",
 };
 
 export default function RootLayout({
@@ -24,8 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jost.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col bg-white text-[var(--ink)]">
+    <html lang="sq" className={`${jost.variable} h-full antialiased`}>
+      <body
+        suppressHydrationWarning
+        className="flex min-h-full flex-col bg-white text-[var(--ink)]"
+      >
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

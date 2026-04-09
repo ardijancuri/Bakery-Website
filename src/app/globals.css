@@ -82,6 +82,11 @@ select option {
   padding-top: 5.9rem;
 }
 
+.page-offset-red {
+  padding-top: 5.9rem;
+  background: var(--brand-red);
+}
+
 @media (min-width: 640px) {
   .page-frame {
     padding-inline: 1.5rem;
@@ -96,6 +101,39 @@ select option {
   .page-offset {
     padding-top: 6.9rem;
   }
+
+  .page-offset-red {
+    padding-top: 6.9rem;
+  }
+
+  .page-hero-block {
+    padding-top: 6.5rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.hero-copy-wide {
+  max-width: 58rem;
+}
+
+.page-hero-block {
+  padding-top: 5.25rem;
+  padding-bottom: 3.5rem;
+}
+
+.display-title {
+  line-height: 1.03;
+  text-wrap: balance;
+}
+
+.section-title {
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.card-title {
+  line-height: 1.12;
+  text-wrap: balance;
 }
 
 .eyebrow {

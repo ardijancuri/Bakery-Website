@@ -23,7 +23,7 @@ export function ProductSpotlight({ product }: ProductSpotlightProps) {
       </div>
       <figcaption className="flex flex-wrap items-center justify-between gap-3 text-[0.76rem] font-extrabold uppercase tracking-[0.16em] text-[var(--brand-red)]">
         <span>{getCategoryLabel(product.category)}</span>
-        <span>Daily shelf</span>
+        <span>Në vitrinë çdo ditë</span>
       </figcaption>
     </figure>
   );

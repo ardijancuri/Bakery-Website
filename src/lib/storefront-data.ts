@@ -1,4 +1,4 @@
-export const siteName = "Pekon 1995";
+export const siteName = "Pekon Bakery";
 
 export type CategoryKey = "bread" | "bake" | "sweet";
 
@@ -45,65 +45,75 @@ export type PromoStrip = {
 };
 
 export type Location = {
+  name: string;
   city: string;
   address: string;
+  hours: string;
+  note: string;
+};
+
+export type ContactDetails = {
+  city: string;
+  summary: string;
+  phones: string[];
+  social: string;
   hours: string;
 };
 
 export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
-  { href: "/about", label: "About" },
-  { href: "/offers", label: "Offers" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Ballina" },
+  { href: "/products", label: "Produktet" },
+  { href: "/about", label: "Rreth Nesh" },
+  { href: "/offers", label: "Oferta" },
+  { href: "/contact", label: "Kontakti" },
 ] as const;
 
 export const categories: Category[] = [
-  { key: "bread", label: "Bread", note: "Daily loaves" },
-  { key: "bake", label: "Bakes", note: "Warm trays" },
-  { key: "sweet", label: "Sweets", note: "Soft finish" },
+  { key: "bread", label: "Bukë", note: "Të freskëta çdo ditë" },
+  { key: "bake", label: "Brumëra", note: "Të kripura dhe specialitete" },
+  { key: "sweet", label: "Ëmbëlsira", note: "Për kafe dhe desert" },
 ];
 
 export const products: Product[] = [
   {
     slug: "baget-i-rrumbullaket",
-    name: "Baget i Rrumbullaket",
+    name: "Baget i Rrumbullakët",
     category: "bread",
-    note: "Round baguette loaf",
+    note: "Bukë bagetë e rrumbullakët",
     ingredients:
-      "Miell Gruri, Miell Elbi, Grize Gruri, Yndyre Bimore, Kripe Kuzhine, Maje Buke.",
-    story: "A round everyday loaf with a light crust and soft pull.",
+      "Miell gruri, miell elbi, grizë gruri, yndyrë bimore, kripë kuzhine, maja buke.",
+    story: "Bukë e përditshme me kore të lehtë dhe brendi të butë.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/24.jpg",
     featured: true,
   },
   {
     slug: "baget-me-qepe",
-    name: "Baget me Qepe",
+    name: "Baget me Qepë",
     category: "bread",
-    note: "Toasted onion baguette",
+    note: "Bagetë me qepë të thekur",
     ingredients:
-      "Miell Gruri, Perforcues per Baget, Maje Buke, Miell Elbi i Pjekur, Kripe Kuzhine, Qepe te Thara.",
-    story: "A fuller loaf with onion sweetness through the finish.",
+      "Miell gruri, përforcues për bagetë, maja buke, miell elbi i pjekur, kripë kuzhine, qepë të thara.",
+    story: "Shije më e plotë me nuancë të lehtë qepësh në fund.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/25.jpg",
   },
   {
     slug: "baget-sandwich",
-    name: "Baget Sandwich",
+    name: "Baget Sanduiç",
     category: "bread",
-    note: "Light sandwich bread",
+    note: "Bukë e lehtë për sanduiçe",
     ingredients:
-      "Miell Gruri, Perforcues per Baget, Kripe Kuzhine, Maje Buke, Vaj per Gatim.",
-    story: "Built for quick sandwiches and warm toast.",
+      "Miell gruri, përforcues për bagetë, kripë kuzhine, maja buke, vaj për gatim.",
+    story: "Për sanduiçe të shpejta dhe tost të ngrohtë.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/26-1.jpg",
   },
   {
     slug: "baget-thekre-sandwich",
-    name: "Baget Thekre Sandwich",
+    name: "Baget Thekre për Sanduiç",
     category: "bread",
-    note: "Rye sandwich loaf",
+    note: "Bagetë sanduiçi me thekër",
     ingredients:
-      "Miell Gruri, Miell Thekre, Miell Thekre i Pjekur, Miell Elbi, Kripe Kuzhine, Maje Buke, Thartire.",
-    story: "Rye depth, soft crumb, and a cleaner finish.",
+      "Miell gruri, miell thekre, miell thekre i pjekur, miell elbi, kripë kuzhine, maja buke, thartirë.",
+    story: "Shije e thellë thekre me brendi të butë dhe fund të pastër.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/27.jpg",
     featured: true,
   },
@@ -111,114 +121,114 @@ export const products: Product[] = [
     slug: "broqe-integrale",
     name: "Broqe Integrale",
     category: "bread",
-    note: "Wholegrain rolls",
+    note: "Broqe me miell integral",
     ingredients:
-      "Miell Gruri, Miell Elbi, Kripe Kuzhine, Maje per Buke, Miell Integral.",
-    story: "Compact rolls with a firmer bite and clean grain profile.",
+      "Miell gruri, miell elbi, kripë kuzhine, maja buke, miell integral.",
+    story: "Broqe kompakte me strukturë më të fortë dhe profil të pastër drithërash.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/28.jpg",
   },
   {
     slug: "buke-ciabatta-integrale",
-    name: "Buke Ciabatta Integrale",
+    name: "Bukë Ciabatta Integrale",
     category: "bread",
-    note: "Olive oil ciabatta",
+    note: "Ciabatta integrale me vaj ulliri",
     ingredients:
-      "Miell Gruri, Perforcues per Ciabatta, Vaj Ulliri, Maje Buke.",
-    story: "Open texture, thin crust, and a softer olive note.",
+      "Miell gruri, përforcues për ciabatta, vaj ulliri, maja buke.",
+    story: "Brendi e ajrosur, kore e hollë dhe notë e lehtë ulliri.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/29.jpg",
   },
   {
     slug: "buke-fitnesi",
-    name: "Buke Fitnesi",
+    name: "Bukë Fitnesi",
     category: "bread",
-    note: "Seeded fitness loaf",
+    note: "Bukë me fara për mëngjes të plotë",
     ingredients:
-      "Miell Thekre i Shtypur, Miell Elbi i Pjekur, Miell Gruri, Fara Liri, Fara Luledielli, Susam, Kripe Kuzhine, Maje Buka.",
-    story: "Dense, seeded, and made for long breakfast tables.",
+      "Miell thekre i shtypur, miell elbi i pjekur, miell gruri, fara liri, fara luledielli, susam, kripë kuzhine, maja buke.",
+    story: "E dendur, me fara dhe e përshtatshme për tryeza të gjata mëngjesi.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/30-1.jpg",
     featured: true,
   },
   {
     slug: "buke-malesie",
-    name: "Buke Malesie",
+    name: "Bukë Malësie",
     category: "bread",
-    note: "Country rye loaf",
+    note: "Bukë fshati me thekër",
     ingredients:
-      "Miell Gruri, Miell Thekre, Kripe Kuzhine, Maje Buke, Thartire, Vaj per Gatim.",
-    story: "The heavier country loaf in the daily line.",
+      "Miell gruri, miell thekre, kripë kuzhine, maja buke, thartirë, vaj për gatim.",
+    story: "Bukë më e rëndë për konsum të përditshëm familjar.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/31.jpg",
   },
   {
     slug: "buke-me-arra",
-    name: "Buke me Arra",
+    name: "Bukë me Arra",
     category: "bake",
-    note: "Walnut grain loaf",
+    note: "Bukë me arra dhe drithëra",
     ingredients:
-      "Miell Thekre, Tershere e Shtypur, Arra Natyrale, Fara Luledielli, Kripe Kuzhine, Maje Buke.",
-    story: "A nutty bake with more bite and a darker finish.",
+      "Miell thekre, tërshërë e shtypur, arra natyrale, fara luledielli, kripë kuzhine, maja buke.",
+    story: "Specialitet me shije arrash, më shumë strukturë dhe fund më të errët.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/32.jpg",
   },
   {
     slug: "buke-me-fara-kungulli",
-    name: "Buke me Fara Kungulli",
+    name: "Bukë me Fara Kungulli",
     category: "bake",
-    note: "Pumpkin seed bake",
+    note: "Bukë me fara kungulli",
     ingredients:
-      "Perzierje e Farave te Bluara, Fara Kungulli, Miell Gruri, Miell Elbi, Kripe Kuzhine, Maje Buke, Yndyre Bimore.",
-    story: "Crunch on top, softer middle, and a rich seed finish.",
+      "Përzierje e farave të bluara, fara kungulli, miell gruri, miell elbi, kripë kuzhine, maja buke, yndyrë bimore.",
+    story: "Krokante sipër, e butë brenda dhe me shije të pasur farash.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/33.jpg",
     featured: true,
   },
   {
     slug: "buke-simiti",
-    name: "Buke Simiti",
+    name: "Bukë Simiti",
     category: "bake",
-    note: "Sesame round bake",
+    note: "Bukë e rrumbullakët me susam",
     ingredients:
-      "Miell Gruri, Yndyre Bimore, Kripe Kuzhine, Maje Buke, Miell Elbi.",
-    story: "A softer bake with the familiar sesame finish.",
+      "Miell gruri, yndyrë bimore, kripë kuzhine, maja buke, miell elbi.",
+    story: "E butë dhe me fund klasik susami.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/38.jpg",
   },
   {
     slug: "trekendesh-me-susam",
-    name: "Trekendesh me Susam",
+    name: "Trekëndësh me Susam",
     category: "bake",
-    note: "Sesame triangle",
+    note: "Specialitet trekëndor me susam",
     ingredients:
-      "Miell Gruri, Susam, Vaj per Gatim, Kripe Kuzhine, Maje Buke.",
-    story: "Sharp shape, toasted edges, and a quick savory finish.",
+      "Miell gruri, susam, vaj për gatim, kripë kuzhine, maja buke.",
+    story: "Formë e mprehtë, skaje të thekura dhe shije e shpejtë e kripur.",
     image: "https://bukabakery.com/wp-content/uploads/2021/07/40.jpg",
   },
   {
     slug: "torte-me-karrote",
-    name: "Torte me Karrote",
+    name: "Tortë me Karrotë",
     category: "sweet",
-    note: "Carrot cake slice",
+    note: "Fetë tortë me karrotë",
     ingredients:
-      "Vaj per Gatim, Sheqer, Kripe Kuzhine, Veze, Kanella, Xhenxhefil, Miell Gruri, Sode Bikarbone, Karrota, Arra Natyrale, Butter, Krem Djathi, Arome Vanilje, Sheqer Pluhur, Pluhur per Pjekje.",
-    story: "Soft crumb, spice warmth, and a cream cheese finish.",
+      "Vaj për gatim, sheqer, kripë kuzhine, vezë, kanellë, xhenxhefil, miell gruri, sodë bikarbone, karrota, arra natyrale, gjalpë, krem djathi, aromë vanilje, sheqer pluhur, pluhur për pjekje.",
+    story: "Brendi e butë, erëza të ngrohta dhe krem djathi në fund.",
     image: "https://bukabakery.com/wp-content/uploads/2021/08/21-1.jpg",
     featured: true,
   },
   {
     slug: "biskote-natyrale-cokollate-e-bardhe",
-    name: "Biskote Natyrale Cokollate e Bardhe",
+    name: "Biskotë Natyrale me Çokollatë të Bardhë",
     category: "sweet",
-    note: "White chocolate cookie",
+    note: "Biskotë me çokollatë të bardhë",
     ingredients:
-      "Gjalpe, Sheqer, Veze, Tershere e Shtypur, Arra Natyrale, Miell Gruri, Pluhur per Pjekurina, Kanella, Fara Kungulli, Rrush i Terur, Mjalte, Cokollate e Bardhe.",
-    story: "Soft center, grain texture, and a sweeter finish.",
+      "Gjalpë, sheqer, vezë, tërshërë e shtypur, arra natyrale, miell gruri, pluhur për pjekje, kanellë, fara kungulli, rrush i thatë, mjaltë, çokollatë e bardhë.",
+    story: "Qendër e butë, strukturë drithërash dhe fund më i ëmbël.",
     image:
       "https://bukabakery.com/wp-content/uploads/2021/05/1-1-630x693.jpg",
   },
   {
     slug: "biskote-natyrale-cokollate-e-zeze",
-    name: "Biskote Natyrale Cokollate e Zeze",
+    name: "Biskotë Natyrale me Çokollatë të Zezë",
     category: "sweet",
-    note: "Dark chocolate cookie",
+    note: "Biskotë me çokollatë të zezë",
     ingredients:
-      "Gjalpe, Sheqer, Veze, Tershere e Shtypur, Arra Natyrale, Miell Gruri, Pluhur per Pjekurina, Kanella, Fara Kungulli, Rrush i Terur, Mjalte, Cokollate e Zeze.",
-    story: "A darker cookie with more cocoa weight and grain texture.",
+      "Gjalpë, sheqer, vezë, tërshërë e shtypur, arra natyrale, miell gruri, pluhur për pjekje, kanellë, fara kungulli, rrush i thatë, mjaltë, çokollatë e zezë.",
+    story: "Biskotë më e thellë në kakao me teksturë të lehtë drithërash.",
     image:
       "https://bukabakery.com/wp-content/uploads/2021/05/1-2-630x693.jpg",
   },
@@ -226,37 +236,38 @@ export const products: Product[] = [
 
 export const homeHero: HomeHero = {
   image: "/pekon1.jpg",
-  kicker: "Daily shelf",
-  title: "Fresh shelf. Bright stop.",
-  blurb: "Bread, sweets, coffee, and quick tables in Pekon colors.",
-  primaryCtaLabel: "Open products",
+  kicker: "Që nga 1995",
+  title: "Bukë, brumëra dhe ëmbëlsira çdo ditë.",
+  blurb:
+    "Pekon Bakery sjell shije të freskëta, shërbim të shpejtë dhe disa pika shitjeje në Shkup.",
+  primaryCtaLabel: "Shih produktet",
   primaryCtaHref: "/products",
-  secondaryCtaLabel: "Find bakery",
+  secondaryCtaLabel: "Gjej pikën më të afërt",
   secondaryCtaHref: "/contact",
 };
 
 export const homeShortcuts: HomeShortcut[] = [
   {
-    title: "Bread line",
-    note: "Daily loaves",
+    title: "Bukë",
+    note: "Të freskëta çdo ditë",
     href: "/products#bread",
     image: products[0].image,
   },
   {
-    title: "Bakes",
-    note: "Warm trays",
+    title: "Brumëra",
+    note: "Të ngrohta nga furra",
     href: "/products#bake",
     image: products[9].image,
   },
   {
-    title: "Sweets",
-    note: "Soft finish",
+    title: "Ëmbëlsira",
+    note: "Për kafe dhe desert",
     href: "/products#sweet",
     image: products[12].image,
   },
   {
-    title: "Gift picks",
-    note: "Quick sets",
+    title: "Oferta",
+    note: "Kombinime ditore",
     href: "/offers",
     image: products[6].image,
   },
@@ -264,20 +275,20 @@ export const homeShortcuts: HomeShortcut[] = [
 
 export const homePromoStrips: PromoStrip[] = [
   {
-    title: "Morning plate",
-    note: "Coffee and one sweet.",
+    title: "Mëngjes",
+    note: "Kafe, kroasan dhe ritëm i shpejtë.",
     href: "/contact",
     image: "/pekon.jpg",
   },
   {
-    title: "Sandwich line",
-    note: "Fast lunch shelf.",
+    title: "Drekë e shpejtë",
+    note: "Sanduiçe dhe brumëra për rrugë.",
     href: "/products#bread",
     image: "/pekon1.jpg",
   },
   {
-    title: "Croissant drop",
-    note: "Hot tray, short run.",
+    title: "Ëmbëlsirë",
+    note: "Vitrinë e freskët për çdo ditë.",
     href: "/products#sweet",
     image: "/pekon2.jpg",
   },
@@ -285,22 +296,22 @@ export const homePromoStrips: PromoStrip[] = [
 
 export const offerBanners: PromoStrip[] = [
   {
-    title: "Morning set",
-    note: "Bread, coffee, one soft sweet.",
+    title: "Seti i mëngjesit",
+    note: "Kafe, produkt i freskët dhe fillim i shpejtë i ditës.",
     href: "/products",
     image:
       "https://bukabakery.com/wp-content/uploads/2021/08/21687017_1537133163014949_4897168709845095684_o-630x693.jpg",
   },
   {
-    title: "Weekend shelf",
-    note: "Round loaves and long table pieces.",
+    title: "Vikend familjar",
+    note: "Bukë, simite dhe ëmbëlsira për tavolinën e shtëpisë.",
     href: "/products",
     image:
       "https://bukabakery.com/wp-content/uploads/2021/05/1-2-630x693.jpg",
   },
   {
-    title: "Cafe hour",
-    note: "Short menu. Fresh trays.",
+    title: "Pauza me kafe",
+    note: "Ëmbëlsirë e butë dhe pije e ngrohtë në çdo pikë Pekon.",
     href: "/contact",
     image:
       "https://bukabakery.com/wp-content/uploads/2021/05/1-1-630x693.jpg",
@@ -309,33 +320,42 @@ export const offerBanners: PromoStrip[] = [
 
 export const locations: Location[] = [
   {
-    city: "Prishtina",
-    address: "Rruga B, morning counter",
-    hours: "07:00 - 22:00",
+    name: "East Gate Mall",
+    city: "Shkup",
+    address: "Belasica 2, East Gate Mall, kati -2",
+    hours: "Hapur çdo ditë",
+    note: "Pikë urbane në qendrën tregtare më të madhe në vend.",
   },
   {
-    city: "Fushe Kosove",
-    address: "Industrial zone, bakery hall",
-    hours: "06:30 - 21:00",
+    name: "Qendra e Shkupit",
+    city: "Shkup",
+    address: "Sv. Kiril i Metodij 13",
+    hours: "Çdo ditë, 07:00 - 22:00",
+    note: "Për bukë, snack dhe kafe gjatë gjithë ditës.",
   },
   {
-    city: "Gjilan",
-    address: "City center, coffee corner",
-    hours: "07:00 - 21:30",
-  },
-  {
-    city: "Prizren",
-    address: "Old town edge, daily shelf",
-    hours: "07:30 - 22:00",
+    name: "Hristijan Todorovski Karposh",
+    city: "Shkup",
+    address: "Hristijan Todorovski Karposh 112",
+    hours: "Çdo ditë, 07:00 - 22:00",
+    note: "Pikë e afërt për lagje, porosi të shpejta dhe produkte të freskëta.",
   },
 ];
 
-export const socialHandle = "@pekonbakery";
+export const contactDetails: ContactDetails = {
+  city: "Shkup, Maqedonia e Veriut",
+  summary: "Për porosi, informata dhe orientim drejt pikës më të afërt të Pekon.",
+  phones: ["+389 70 348 417", "+389 75 219 644"],
+  social: "@pekon_bakery",
+  hours: "Çdo ditë, 07:00 - 22:00",
+};
+
+export const socialHandle = "@pekon_bakery";
 
 export const featuredProducts = products.filter((product) => product.featured);
 
 export function getCategoryLabel(category: CategoryKey) {
-  return categories.find((item) => item.key === category)?.label ?? "Product";
+  return categories.find((item) => item.key === category)?.label ?? "Produkt";
 }
 
 export function getProductBySlug(slug: string) {

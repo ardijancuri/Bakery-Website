@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { HomePromoSlider } from "@/components/home-promo-slider";
 import { ProductCard } from "@/components/product-card";
 import pekonIcon from "../../pekon-icon.png";
 import {
@@ -31,19 +32,19 @@ export default function Home() {
         <div className="absolute inset-0 bg-[rgba(41,21,23,0.34)]" />
 
         <div className="page-frame relative flex min-h-[44rem] items-center justify-center py-32 text-center sm:min-h-[52rem] sm:py-36 lg:min-h-[60rem] lg:py-44">
-          <div className="rise-in max-w-xl space-y-4">
+          <div className="rise-in max-w-2xl space-y-4">
             <Image
               src={pekonIcon}
-              alt="Pekon icon"
+              alt="Ikona Pekon"
               width={96}
               height={96}
               priority
               className="mx-auto h-20 w-20 object-contain sm:h-24 sm:w-24"
             />
-            <h1 className="text-5xl font-black uppercase leading-[0.92] text-white [text-shadow:0_6px_18px_rgba(41,21,23,0.45)] sm:text-6xl lg:text-7xl">
+            <h1 className="display-title mx-auto max-w-[14ch] text-5xl font-black uppercase text-white [text-shadow:0_6px_18px_rgba(41,21,23,0.45)] sm:text-6xl lg:text-7xl">
               {homeHero.title}
             </h1>
-            <p className="mx-auto max-w-sm text-sm leading-7 text-white [text-shadow:0_4px_12px_rgba(41,21,23,0.42)]">
+            <p className="mx-auto max-w-lg text-sm leading-7 text-white [text-shadow:0_4px_12px_rgba(41,21,23,0.42)]">
               {homeHero.blurb}
             </p>
             <div className="pt-2">
@@ -62,8 +63,8 @@ export default function Home() {
       <section className="section-red">
         <div className="page-frame py-16 sm:py-20">
           <div className="text-center">
-            <h2 className="text-3xl font-black uppercase sm:text-4xl">
-              The daily line
+            <h2 className="section-title text-3xl font-black uppercase sm:text-4xl">
+              Çfarë gjen çdo ditë
             </h2>
           </div>
 
@@ -97,7 +98,7 @@ export default function Home() {
           <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
             <Image
               src="/pekon.jpg"
-              alt="Pekon dessert plate"
+              alt="Ëmbëlsirë Pekon"
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
               className="object-cover"
@@ -106,7 +107,7 @@ export default function Home() {
           <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
             <Image
               src="/pekon1.jpg"
-              alt="Pekon sandwiches"
+              alt="Sanduiçe Pekon"
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
               className="object-cover"
@@ -115,7 +116,7 @@ export default function Home() {
           <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
             <Image
               src="/pekon2.jpg"
-              alt="Pekon croissant"
+              alt="Kroasan Pekon"
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
               className="object-cover"
@@ -127,8 +128,8 @@ export default function Home() {
       <section className="logo-pattern-surface">
         <div className="page-frame py-16 sm:py-20">
           <div className="text-center">
-            <h2 className="text-3xl font-black uppercase text-[var(--brand-red)] sm:text-4xl">
-              Gift ideas
+            <h2 className="section-title text-3xl font-black uppercase text-[var(--brand-red)] sm:text-4xl">
+              Të përzgjedhurat
             </h2>
           </div>
 
@@ -142,7 +143,7 @@ export default function Home() {
             <div className="relative min-h-[18rem] overflow-hidden rounded-[1rem] sm:min-h-[24rem]">
               <Image
                 src="/pekon2.jpg"
-                alt="Pekon cafe experience"
+                alt="Kafe dhe ëmbëlsirë në Pekon"
                 fill
                 sizes="(max-width: 1024px) 100vw, 42vw"
                 className="object-cover"
@@ -150,15 +151,16 @@ export default function Home() {
             </div>
 
             <div className="space-y-4">
-              <h2 className="max-w-lg text-4xl font-black uppercase leading-[0.95] text-[var(--brand-red)] sm:text-5xl">
-                Coffee. Sweet. Quick seat.
+              <h2 className="section-title max-w-xl text-4xl font-black uppercase text-[var(--brand-red)] sm:text-5xl">
+                Kafe. Ëmbëlsirë. Pauzë e shpejtë.
               </h2>
               <p className="max-w-md text-sm leading-7 text-[var(--ink-soft)]">
-                Short menus, bright counters, and bakery shelves built for quick visits.
+                Pika të ndritshme, vitrinë e freskët dhe produkte që merren shpejt për
+                në punë, në shtëpi ose gjatë shëtitjes në qytet.
               </p>
               <div className="pt-2">
                 <Link href="/contact" className="button-chip">
-                  Visit Pekon
+                  Vizito Pekon
                 </Link>
               </div>
             </div>
@@ -169,8 +171,8 @@ export default function Home() {
       <section className="section-red">
         <div className="page-frame py-16 sm:py-20">
           <div className="text-center">
-            <h2 className="text-3xl font-black uppercase sm:text-4xl">
-              Favorites
+            <h2 className="section-title text-3xl font-black uppercase sm:text-4xl">
+              Të preferuarat
             </h2>
           </div>
 
@@ -184,32 +186,13 @@ export default function Home() {
 
       <section className="logo-pattern-surface">
         <div className="page-frame py-16 sm:py-20">
-          <div className="grid gap-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-start">
-            <div className="grid gap-2 sm:grid-cols-2">
-              <div className="relative min-h-[13rem] overflow-hidden rounded-[1rem]">
-                <Image
-                  src="/pekon.jpg"
-                  alt="Pekon dessert"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 26vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative min-h-[13rem] overflow-hidden rounded-[1rem]">
-                <Image
-                  src="/pekon1.jpg"
-                  alt="Pekon line"
-                  fill
-                  sizes="(max-width: 640px) 100vw, 26vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
+          <div className="grid gap-5 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+            <HomePromoSlider items={homePromoStrips} />
 
-            <div className="space-y-5">
+            <div className="space-y-4">
               <div>
-                <h2 className="text-4xl font-black uppercase leading-[0.95] text-[var(--brand-red)] sm:text-5xl">
-                  In focus
+                <h2 className="section-title text-4xl font-black uppercase text-[var(--brand-red)] sm:text-5xl">
+                  Nga vitrina
                 </h2>
               </div>
 
@@ -218,10 +201,10 @@ export default function Home() {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="rounded-[1rem] bg-[var(--surface)] p-4"
+                    className="rounded-[1rem] border border-[rgba(41,21,23,0.12)] bg-white p-4"
                   >
                     <p className="eyebrow">{item.title}</p>
-                    <p className="mt-3 text-base font-black uppercase leading-tight text-[var(--brand-red)]">
+                    <p className="mt-3 text-base font-black uppercase leading-tight text-[var(--ink)]">
                       {item.note}
                     </p>
                   </Link>
@@ -231,8 +214,8 @@ export default function Home() {
           </div>
 
           <div className="mt-16 text-center">
-            <h2 className="text-3xl font-black uppercase text-[var(--brand-red)] sm:text-4xl">
-              Merchandising
+            <h2 className="section-title text-3xl font-black uppercase text-[var(--brand-red)] sm:text-4xl">
+              Më shumë shije
             </h2>
           </div>
 
@@ -244,7 +227,7 @@ export default function Home() {
 
           <div className="mt-8 text-center">
             <Link href="/products" className="button-chip">
-              Full catalog
+              Shih katalogun e plotë
             </Link>
           </div>
         </div>
@@ -255,7 +238,7 @@ export default function Home() {
           <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
             <Image
               src="/pekon3.jpg"
-              alt="Pekon sandwich special"
+              alt="Specialitet sanduiçi Pekon"
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
               className="object-cover"
@@ -264,7 +247,7 @@ export default function Home() {
           <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
             <Image
               src="/pekon4.jpg"
-              alt="Pekon Dubai croissant"
+              alt="Kroasan special Pekon"
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
               className="object-cover"
@@ -273,7 +256,7 @@ export default function Home() {
           <div className="relative h-[24rem] sm:h-[32rem] lg:h-[44rem]">
             <Image
               src="/pekon5.jpg"
-              alt="Pekon ultra chocolate pastry"
+              alt="Ëmbëlsirë me çokollatë nga Pekon"
               fill
               sizes="(max-width: 640px) 100vw, 33vw"
               className="object-cover"
