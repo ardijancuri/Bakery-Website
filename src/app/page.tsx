@@ -189,7 +189,7 @@ export default function Home() {
           <div className="grid gap-5 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
             <HomePromoSlider items={homePromoStrips} />
 
-            <div className="space-y-4">
+            <div className="flex h-full flex-col justify-center space-y-4">
               <div>
                 <h2 className="section-title text-4xl font-black uppercase text-[var(--brand-red)] sm:text-5xl">
                   Nga vitrina
