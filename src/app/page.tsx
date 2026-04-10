@@ -139,7 +139,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="mt-16 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
             <div className="relative min-h-[18rem] overflow-hidden rounded-[1rem] sm:min-h-[24rem]">
               <Image
                 src="/pekon2.jpg"
