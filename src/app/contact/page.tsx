@@ -26,7 +26,7 @@ export default function ContactPage() {
 
       <section className="bg-white">
         <div className="page-frame grid gap-8 py-10 sm:py-14 lg:grid-cols-[0.86fr_1.14fr]">
-          <div className="space-y-6 rounded-[1rem] bg-[var(--surface)] p-6">
+          <div className="surface-card space-y-6 rounded-[1rem] p-6">
             <div>
               <p className="eyebrow">Informata</p>
               <div className="mt-4 space-y-1 text-sm leading-7 text-[var(--ink-soft)]">
@@ -47,7 +47,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <form className="grid gap-4 rounded-[1rem] bg-[var(--surface)] p-6">
+          <form className="surface-card grid gap-4 rounded-[1rem] p-6">
             <label className="grid gap-2 text-sm font-medium text-[var(--ink-soft)]">
               Emri
               <input

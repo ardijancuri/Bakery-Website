@@ -186,7 +186,7 @@ export default function Home() {
 
       <section className="logo-pattern-surface">
         <div className="page-frame py-16 sm:py-20">
-          <div className="grid gap-5 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+          <div className="grid gap-4 lg:grid-cols-[0.94fr_1.06fr] lg:items-start">
             <HomePromoSlider items={homePromoStrips} />
 
             <div className="flex h-full flex-col justify-center space-y-4">

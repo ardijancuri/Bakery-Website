@@ -39,7 +39,7 @@ export default function AboutPage() {
 
       <section className="bg-white">
         <div className="page-frame grid gap-6 py-10 sm:py-14 lg:grid-cols-2">
-          <article className="rounded-[1rem] bg-[var(--surface)] p-6">
+          <article className="surface-card rounded-[1rem] p-6">
             <p className="eyebrow">Traditë</p>
             <h2 className="mt-3 text-3xl font-black uppercase text-[var(--brand-red)]">
               Që nga 1995
@@ -50,7 +50,7 @@ export default function AboutPage() {
             </p>
           </article>
 
-          <article className="rounded-[1rem] bg-[var(--surface)] p-6">
+          <article className="surface-card rounded-[1rem] p-6">
             <p className="eyebrow">Zgjerim</p>
             <h2 className="mt-3 text-3xl font-black uppercase text-[var(--brand-red)]">
               Nga Tetova në Shkup

@@ -32,7 +32,7 @@ export function HomePromoSlider({ items }: HomePromoSliderProps) {
   const activeItem = items[activeIndex];
 
   return (
-    <div className="relative w-full max-w-[34rem]">
+    <div className="relative w-full max-w-[30rem]">
       <Link
         href={activeItem.href}
         className="group relative block aspect-square overflow-hidden rounded-[1.6rem] bg-[var(--surface)] shadow-[var(--shadow)]"
