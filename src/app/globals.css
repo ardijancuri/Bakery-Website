@@ -33,6 +33,16 @@ body {
   font-family: var(--font-jost), "Avenir Next", "Segoe UI", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.14;
+  text-wrap: balance;
+}
+
 ::selection {
   background: rgba(252, 169, 61, 0.42);
 }
@@ -122,17 +132,17 @@ select option {
 }
 
 .display-title {
-  line-height: 1.03;
+  line-height: 1.18;
   text-wrap: balance;
 }
 
 .section-title {
-  line-height: 1.08;
+  line-height: 1.16;
   text-wrap: balance;
 }
 
 .card-title {
-  line-height: 1.12;
+  line-height: 1.2;
   text-wrap: balance;
 }
 

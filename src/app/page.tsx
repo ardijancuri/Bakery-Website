@@ -204,7 +204,7 @@ export default function Home() {
                     className="rounded-[1rem] border border-[rgba(41,21,23,0.12)] bg-white p-4"
                   >
                     <p className="eyebrow">{item.title}</p>
-                    <p className="mt-3 text-base font-black uppercase leading-tight text-[var(--ink)]">
+                    <p className="card-title mt-3 text-base font-black uppercase text-[var(--ink)]">
                       {item.note}
                     </p>
                   </Link>

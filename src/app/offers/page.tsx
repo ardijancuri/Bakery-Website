@@ -84,7 +84,7 @@ export default function OffersPage() {
             ].map((item) => (
               <article key={item} className="rounded-[1rem] bg-white p-5 text-[var(--ink)]">
                 <p className="eyebrow">Ofertë</p>
-                <p className="mt-3 text-2xl font-black uppercase leading-tight text-[var(--brand-red)]">
+                <p className="card-title mt-3 text-2xl font-black uppercase text-[var(--brand-red)]">
                   {item}
                 </p>
               </article>
