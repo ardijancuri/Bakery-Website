@@ -121,7 +121,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </h2>
           </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-5 xl:grid-cols-3">
             {relatedProducts.map((relatedProduct, index) => (
               <ProductCard
                 key={relatedProduct.slug}

@@ -133,7 +133,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6 xl:grid-cols-4">
             {giftPicks.map((product, index) => (
               <ProductCard key={product.slug} product={product} priority={index < 2} />
             ))}
@@ -176,7 +176,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6 xl:grid-cols-4">
             {favoritePicks.map((product, index) => (
               <ProductCard key={product.slug} product={product} priority={index === 0} />
             ))}
@@ -219,7 +219,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6 xl:grid-cols-4">
             {merchPicks.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
