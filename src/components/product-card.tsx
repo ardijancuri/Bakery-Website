@@ -26,20 +26,20 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
 
       <div className="flex flex-1 flex-col items-center pt-3 sm:pt-4">
         <Link href={`/products/${product.slug}`} className="inline-block">
-          <h3 className="card-title min-h-[3.8rem] text-[1.05rem] font-black text-[var(--ink)] group-hover:text-[var(--brand-red)] sm:min-h-[4.6rem] sm:text-[1.35rem]">
+          <h3 className="card-title clamp-2 text-[1.05rem] font-black text-[var(--ink)] group-hover:text-[var(--brand-red)] sm:text-[1.35rem]">
             {product.name}
           </h3>
         </Link>
-        <p className="mt-1.5 min-h-[3.5rem] max-w-[12rem] text-[0.78rem] leading-5 text-[var(--ink-soft)] sm:mt-2 sm:min-h-[3rem] sm:max-w-[15rem] sm:text-sm sm:leading-6">
+        <p className="clamp-2 mt-1.5 max-w-[12rem] text-[0.78rem] leading-5 text-[var(--ink-soft)] sm:mt-2 sm:max-w-[15rem] sm:text-sm sm:leading-6">
           {product.note}
         </p>
-        <p className="mt-2 text-[0.78rem] leading-5 text-[var(--ink)] sm:text-sm sm:leading-6">
+        <p className="mt-1.5 text-[0.78rem] leading-5 text-[var(--ink)] sm:mt-2 sm:text-sm sm:leading-6">
           {getCategoryLabel(product.category)}
         </p>
-        <div className="mt-5 sm:mt-7">
+        <div className="mt-auto pt-4 sm:pt-6">
           <Link
             href={`/products/${product.slug}`}
-            className="inline-flex min-h-[2.6rem] items-center justify-center rounded-full bg-[var(--brand-red)] px-4 text-[0.68rem] font-extrabold uppercase tracking-[0.12em] text-white sm:min-h-[3rem] sm:px-7 sm:text-[0.82rem] sm:tracking-[0.18em]"
+            className="inline-flex items-center justify-center rounded-full bg-[var(--brand-red)] px-4 py-2.5 text-[0.68rem] font-extrabold uppercase tracking-[0.12em] text-white sm:px-7 sm:py-3 sm:text-[0.82rem] sm:tracking-[0.18em]"
           >
             Shih produktin
           </Link>
